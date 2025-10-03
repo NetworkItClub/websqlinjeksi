@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>L4F Web — Suntikan SQL</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">L4F</div>
+      <h1>Web L4F — SQL Injection Lab</h1>
+    </div>
+    <p class="tagline">Buktikan kepiawaianmu — atau pulang dengan malu.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Login</h2>
+      <form id="loginForm" action="/api/login" method="POST" autocomplete="off">
+        <label>
+          Username
+          <input type="text" name="username" id="username" placeholder="username" />
+        </label>
+
+        <label>
+          Password
+          <input type="password" name="password" id="password" placeholder="password" />
+        </label>
+
+        <div class="row">
+          <button type="submit" class="btn">Login</button>
+          <button type="button" id="tauntBtn" class="btn alt">Taunt</button>
+        </div>
+      </form>
+
+      <div class="result" id="result">
+        Masukkan kredensialmu — atau biarkan rasa penasaran menggerogoti.
+      </div>
+    </section>
+
+    <section class="notes">
+      <h3>Petunjuk singkat</h3>
+      <ul>
+        <li>Server menyimpan user <code>admin</code> dengan flag tersembunyi.</li>
+        <li>Ini lingkungan CTF. Jangan dipakai di sistem nyata.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>CTF · L4F · Tantangan untuk yang berani</small>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

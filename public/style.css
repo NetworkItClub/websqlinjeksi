@@ -1,0 +1,140 @@
+:root{
+  --bg-1:#071021;
+  --bg-2:#0f1724;
+  --card:#071422;
+  --accent:#7c3aed;
+  --accent-2:#5b21b6;
+  --muted:#9aa4b2;
+  --glass: rgba(255,255,255,0.03);
+  --success:#22c55e;
+  --danger:#ff6b6b;
+  --shadow: 0 10px 30px rgba(2,6,23,0.6);
+}
+
+/* reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #e6eef8;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent 8%),
+              linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* layout */
+.container{
+  max-width:960px;
+  margin:40px auto;
+  padding:20px;
+}
+
+/* header */
+.site-header{
+  text-align:center;
+  margin-top:16px;
+  margin-bottom:14px;
+}
+.brand{display:flex;align-items:center;justify-content:center;gap:14px}
+.logo{
+  width:64px;height:64px;border-radius:12px;
+  background: linear-gradient(135deg,var(--accent), var(--accent-2));
+  display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;
+  box-shadow: 0 8px 24px rgba(92,33,150,0.25);
+  color: white;
+  letter-spacing: .6px;
+}
+.tagline{color:var(--muted);margin-top:8px; font-size:14px}
+
+/* card */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  padding:22px;
+  border-radius:12px;
+  box-shadow: var(--shadow);
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+
+/* form */
+form{flex:1; min-width:260px}
+label{display:block;margin-bottom:12px;font-size:14px;color:var(--muted)}
+input[type="text"], input[type="password"]{
+  width:100%;
+  padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02); color:inherit; outline:none;
+  margin-top:6px;
+  transition: box-shadow .12s ease, transform .12s ease;
+}
+input:focus{
+  box-shadow: 0 6px 20px rgba(124,58,237,0.12);
+  transform: translateY(-1px);
+}
+
+/* buttons */
+.row{display:flex;gap:12px;align-items:center;margin-top:6px}
+.btn{
+  background:var(--accent); color:#fff; padding:10px 14px;border-radius:10px;border:0;cursor:pointer;
+  font-weight:700; letter-spacing:.3px;
+  box-shadow: 0 6px 18px rgba(92,33,150,0.18);
+}
+.btn.alt{
+  background:transparent;border:1px solid rgba(255,255,255,0.06); color:var(--muted); font-weight:600;
+}
+.btn:active{transform:translateY(1px)}
+
+/* result box */
+.result{
+  margin-top:12px; padding:14px; border-radius:10px; background:var(--glass); color:var(--muted);
+  white-space:pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  min-height:96px; flex-basis:340px; max-width:420px; overflow:auto;
+  transition: transform .18s ease, box-shadow .18s ease;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* taunt emphasis */
+.taunt{
+  color: #ffd166;
+  font-weight:700;
+  letter-spacing: .2px;
+}
+
+/* success and danger styles for server messages (when they include keywords) */
+.result.success{
+  border-color: rgba(34,197,94,0.12);
+  box-shadow: 0 8px 30px rgba(34,197,94,0.06);
+  color: #d7f9e0;
+}
+.result.fail{
+  border-color: rgba(255,107,107,0.08);
+  box-shadow: 0 8px 30px rgba(255,107,107,0.04);
+  color: #ffd7d7;
+}
+
+/* subtle pulse when taunt appears */
+@keyframes tauntPulse {
+  0% { transform: translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.2); }
+  50% { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.35); }
+  100% { transform: translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.2); }
+}
+.result.animate {
+  animation: tauntPulse 700ms ease;
+}
+
+/* notes / footer */
+.notes{margin-top:18px;color:var(--muted); font-size:14px}
+.site-footer{text-align:center;color:var(--muted);margin:28px 0}
+
+/* responsive */
+@media (max-width:720px){
+  .container{padding:14px;margin:20px auto}
+  .brand{flex-direction:column;gap:8px}
+  .card{flex-direction:column}
+  .result{flex-basis:auto;max-width:100%}
+}
