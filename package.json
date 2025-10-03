@@ -1,0 +1,13 @@
+{
+  "name": "l4f-webagent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "CTF L4F - SQLi lab (pure-js) - ready for Vercel",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {}
+}

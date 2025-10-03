@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/flag", "destination": "/api/flag" },
+    { "source": "/login", "destination": "/api/login" }
+  ],
+  "cleanUrls": true
+}
