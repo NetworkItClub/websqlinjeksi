@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         failCount = 0;
         // tambahkan sedikit ejekan ramah (merayakan kemenangan si pemain)
         setTimeout(() => {
-          result.textContent = txt + "\n\nOK, kamu menang. Jangan lupa pamer ke temanmu 😏";
+          result.textContent = txt + "\n\nOK, kamu menang kids 😏";
         }, 300);
       }
     } catch (err) {
